@@ -1,0 +1,90 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+    <meta name="description" content="Spotify Current Song">
+    <meta name="keywords" content="spotify,obs,currently,playing">
+    <meta name="author" content="bruxo00">
+    <meta charset="UTF-8">
+
+    <title>Spotify Currently Playing</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+
+    <style>
+        body,
+        html {
+            height: 100%;
+            display: grid;
+            font-family: 'Montserrat', sans-serif;
+            background: rgba(255, 0, 0, 1);
+            overflow: hidden;
+        }
+
+        .container {
+            margin: auto;
+        }
+
+        .inline {
+            display: inline;
+        }
+
+        .current-text {
+            font-size: 60px;
+            color: white;
+            line-height: 0px;
+        }
+
+        .music-name-text {
+            font-weight: bold;
+            font-size: 100px;
+            color: white;
+            line-height: 0px;
+        }
+
+        .spotify-logo {
+            width: 619px;
+            height: 186px;
+        }
+
+        figure {
+            display: inline-block;
+            text-align: center;
+            margin: 5px;
+        }
+
+        figure img {
+            vertical-align: top;
+        }
+    </style>
+</head>
+
+<body onload="onLoad()">
+    <div class="container">
+        <figure>
+            <img class="spotify-logo" src="https://logodownload.org/wp-content/uploads/2016/09/Spotify-logo.png" />
+            <figcaption>
+                <p class="current-text">Now Playing:</p>
+                <p class="music-name-text">{MUSIC_NAME}</p>
+            </figcaption>
+        </figure>
+    </div>
+    <script>
+        const onLoad = () => {
+            const url = new URL(window.location.href);
+            let refresh = url.searchParams.get("refresh");
+
+            console.log(refresh);
+
+            if (refresh == null) {
+                refresh = 5000;
+            }
+
+            setTimeout(() => {
+                location.reload();
+            }, refresh);
+        }
+    </script>
+</body>
+
+</html>
