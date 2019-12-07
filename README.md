@@ -1,12 +1,15 @@
 # SpotifyCurrentlyPlaying
 A tool to show the current playing song on OBS (for streamers). How to show spotify music name on OBS.
 
+## Download
+[Download Here](https://github.com/bruxo00/SpotifyCurrentlyPlaying/releases/latest)
+
 ## Screenshots
 ##### Web Server
-![Desc](https://i.imgur.com/d1lI4O0.png)
+![WebS](https://i.imgur.com/d1lI4O0.png)
 
 #### Text File
-![Desc](https://i.imgur.com/UwgEZrA.png)
+![Text](https://i.imgur.com/UwgEZrA.png)
 
 
 ## How to set up
