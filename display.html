@@ -10,6 +10,9 @@
     <title>Spotify Currently Playing</title>
 
     <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css"
+        integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA=="
+        crossorigin="anonymous" />
 
     <style>
         body,
@@ -21,54 +24,45 @@
             overflow: hidden;
         }
 
-        .container {
-            margin: auto;
-        }
-
-        .inline {
-            display: inline;
-        }
-
-        .current-text {
-            font-size: 60px;
-            color: white;
-            line-height: 0px;
-        }
-
         .music-name-text {
             font-weight: bold;
-            font-size: 100px;
+            font-size: 3em;
             color: white;
-            line-height: 0px;
-        }
-
-        .spotify-logo {
-            width: 619px;
-            height: 186px;
-        }
-
-        figure {
-            display: inline-block;
             text-align: center;
-            margin: 5px;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+            width: 1000px;
         }
 
-        figure img {
-            vertical-align: top;
+        .centered {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .panel {
+            background-color: rgba(0, 0, 0, 0.5);
         }
     </style>
 </head>
 
 <body onload="onLoad()">
-    <div class="container">
-        <figure>
-            <img class="spotify-logo" src="https://logodownload.org/wp-content/uploads/2016/09/Spotify-logo.png" />
-            <figcaption>
-                <p class="current-text">Now Playing:</p>
+    <div class="container centered">
+        <div class="panel">
+            <div class="row d-flex justify-content-center pt-4">
+                <img src="https://logodownload.org/wp-content/uploads/2016/09/Spotify-logo.png"
+                    style="max-width: 30%;" />
+            </div>
+            <div class="row d-flex justify-content-center">
                 <p class="music-name-text">{MUSIC_NAME}</p>
-            </figcaption>
-        </figure>
+            </div>
+        </div>
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"
+        integrity="sha512-XKa9Hemdy1Ui3KSGgJdgMyYlUg1gM+QhL6cnlyTe2qzMCYm4nAZ1PsVerQzTTXzonUR+dmswHqgJPuwCq1MaAg=="
+        crossorigin="anonymous"></script>
     <script>
         const onLoad = () => {
             const url = new URL(window.location.href);
